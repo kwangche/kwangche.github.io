@@ -1,0 +1,598 @@
+
+* {
+    font-family: 'League Spartan', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #171717;
+}
+
+img {
+    object-position: bottom;
+}
+
+
+/*커버*/
+section.cover {
+    position: relative;
+    height: 100%;
+}
+
+section.cover .typo_challenge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+section.cover .typo_opportunity {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+section.cover .typo_portfolio_1 {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+section.cover .typo_portfolio_2 {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+section.cover .text {
+    padding: 400px 0 0 200px;
+}
+
+section.cover h1 {
+    font-size: 100px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+section.cover h1 span{
+background-image: url('../images/sky.gif');
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0,0,0,0.3);
+}
+
+section.cover p {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+section.cover .rec{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 10%;
+
+    transition: all 4s;
+    
+    overflow: hidden;
+}
+
+section.cover .rec img{
+    height: 100%;
+    opacity: 0.6;
+}
+
+
+/*소개*/
+
+section.info {
+    position: relative;
+}
+
+section.info .wrap {
+    width: 1600px;
+    height: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+section.info .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    background-color: #333;
+    border-bottom-right-radius: 400px;
+}
+
+section.info .title h2 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    margin: 50px 0 0 50px;
+}
+
+section.info .img_box {
+    width: 454px;
+    height: 676px;
+}
+
+section.info .img_box img {
+}
+
+section.info .text {
+    height: 660px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+section.info .text > div{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section.info .text_left {
+    width: 550px;
+    
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    
+    padding-left: 100px;
+}
+
+section.info .text_left p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+section.info .text_left h3 {
+    font-size: 46px;
+    font-weight: bold;
+    color: #171717;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+section.info .text_left .contact_list li {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+section.info .text_left .contact_list li span {
+    font-weight: 600;
+}
+
+section.info .text_right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+section.info .text_right .box{
+    display: flex;
+    flex-flow: row wrap;
+    
+    margin-bottom: 20px;
+}
+
+section.info .text_right .box .box_title{
+    width: 25%;
+    
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    
+    display: block;
+}
+
+section.info .text_right .box .box_text{
+    width: 75%;
+    
+    display: flex;
+    flex-flow: row wrap;
+}
+
+section.info .text_right .box .box_text li{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+    
+    display: flex;
+    align-items: center;
+}
+
+section.info .text_right .box .program li{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+section.info .text_right .box .box_text li span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section.info .text_right .box .box_text li:nth-child(1) span{
+    background-image: url(../images/icon_ai.png);
+}
+
+section.info .text_right .box .box_text li:nth-child(2) span{
+    background-image: url(../images/icon_ps.png);
+}
+
+section.info .text_right .box .box_text li:nth-child(3) span{
+    background-image: url(../images/icon_fg.png);
+}
+
+section.info .text_right .box .box_text li:nth-child(4) span{
+    background-image: url(../images/icon_html.png);
+}
+
+section.info .text_right .box .box_text li:nth-child(5) span{
+    background-image: url(../images/icon_css.png);
+}
+
+section.info .text_right .box .box_text li:nth-child(6) span{
+    background-image: url(../images/icon_jq.png);
+}
+
+section.info .text_right .box .box_text p{
+    width: 50%;
+    
+}
+
+section.info .text_right .info_list>li:nth-child(2) {
+    margin: 60px 0 80px 0;
+}
+
+section.info .text_right .info_list h3 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+section.info .text_right .info_list p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 10px;
+    color: #333;
+}
+
+section.info .text_right .info_list p span {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #171717;
+    font-weight: bold;
+}
+
+section.portfolio {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+section.portfolio .portfolio_img {
+    width: 70%;
+    height: inherit;
+    overflow: hidden;
+    z-index: 2;
+}
+
+section.right .portfolio_img img {
+    float: right;
+    height: inherit;
+}
+
+section.left .portfolio_img img {
+    float: left;
+    height: inherit;
+}
+
+section.portfolio .text {
+    width: 30%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+section.right .text {
+    text-align: right;
+}
+
+section.left .text {
+    text-align: left;
+}
+
+
+
+section.portfolio .text h4 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+section.portfolio .text h5 {
+    font-size: 40px;
+    font-weight: bold;
+    
+    margin-bottom: 30px;
+    
+}
+
+section.portfolio .text h5 span{
+    width: 30px;
+    height: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #fff;
+    border-radius: 50%;
+    
+    background-color: #fff;
+    
+    transition: all 0.3s;
+}
+
+section.portfolio .text h5 span img{
+    transition: all 0.3s;
+}
+
+section.portfolio .text h5:hover span{
+    background-color: #171717;
+}
+
+section.portfolio .text h5:hover span img{
+    filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(341deg) brightness(103%) contrast(103%);
+}
+
+section.right .text h5 span {
+    margin-left: 20px;
+    float: right;
+}
+
+section.left .text h5 span {
+    margin-right: 20px;
+    float: left;
+}
+
+section.portfolio .text p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+section.portfolio .text >img {
+    position: absolute;
+    z-index: -1;
+}
+
+section.portfolio .text .info {
+    position: absolute;
+    z-index: 2;
+}
+
+section.portfolio .text .info_list {
+    width: 320px;
+}
+
+section.right .text .info_list {
+    float: right;
+}
+
+section.left .text .info_list {
+    float: left;
+}
+
+section.portfolio .text .info_list li {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 29px;
+    
+    display: flex;
+    
+    margin-bottom: 10px;
+}
+
+section.portfolio .text .info_list li span {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    width: 100px;
+    margin-left: 5px;
+}
+
+section.portfolio .text .info_list .tool_list{
+    display: flex;
+    flex-flow: row wrap;
+    width: 150px;
+}
+
+section.portfolio .text .info_list .tool_list li{
+    width: 33.3333%;
+}
+
+section.portfolio_1 .text > img {
+    right: 0;
+    bottom: -90px;
+}
+
+section.portfolio_1 .text .info {
+    right: 50px;
+    bottom: 100px;
+}
+
+section.portfolio_2 .text > img {
+    left: 0;
+    bottom: 0px;
+}
+
+section.portfolio_2 .text .info {
+    left: 50px;
+    bottom: 200px;
+}
+section.portfolio_3 .text .info_list {
+    width: 400px;
+}
+
+section.portfolio_3 .text > img {
+    right: 0;
+    bottom: 0px;
+}
+
+section.portfolio_3 .text .info {
+    right: 50px;
+    bottom: 200px;
+}
+
+
+section.portfolio_4 .text > img {
+    left: 0;
+    bottom: 30px;
+}
+
+section.portfolio_4 .text .info {
+    left: 50px;
+    bottom: 220px;
+}
+
+section.portfolio_4 .text .info h5,
+section.portfolio_4 .text .info p{
+    color: #fff;
+}
+
+section.portfolio_5 .text .info_list {
+    width: 400px;
+}
+
+section.portfolio_5 .text > img {
+    right: 0;
+    bottom: 50px;
+}
+
+section.portfolio_5 .text .info {
+    right: 50px;
+    bottom: 220px;
+}
+
+section.portfolio_6 .text .info_list{
+    width: 350px;
+}
+
+section.portfolio_6 .text > img {
+    left: 0;
+    bottom: 30px;
+}
+
+section.portfolio_6 .text .info {
+    left: 50px;
+    bottom: 220px;
+}
+
+section.contact {
+    position: relative;
+    background-image: url(../images/img_contact.png);
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+
+section.contact .card {
+    position: absolute;
+    top: 110px;
+    right: 110px;
+
+    width: 607px;
+    height: 337px;
+
+    border: 1px solid #aaa;
+}
+
+section.contact .card_box {
+    position: relative;
+    width: inherit;
+    height: inherit;
+}
+
+section.contact .card_box h7 {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    z-index: 2;
+
+    font-family: 'League Spartan', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+section.contact .card_box .under_line {
+    position: absolute;
+    top: 45px;
+    left: 62px;
+    z-index: 1;
+
+    width: 169px;
+    height: 15px;
+    background-color: #82B6DB;
+
+}
+
+section.contact .card_list {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+section.contact .card_list li {
+    display: flex;
+    width: 270px;
+
+    font-size: 16px;
+    text-align: right;
+
+    color: #333;
+}
+
+section.contact .card_list li:nth-child(2) {
+    margin: 20px 0;
+}
+
+section.contact .card_list li div {
+    width: 100px;
+
+    font-weight: normal;
+}
+
+section.contact .card_list li span {
+    display: block;
+    width: 300px;
+
+    font-weight: 300;
+}
+
+section.contact h6 {
+    position: absolute;
+    bottom: 130px;
+    left: 130px;
+
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 87px;
+    color: #fff;
+}
