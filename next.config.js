@@ -1,20 +1,14 @@
+const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
+const isUserPagesRepo = repo.endsWith('.github.io');
+
+const basePath =
+    process.env.GITHUB_ACTIONS === 'true' && !isUserPagesRepo ? `/${repo}` : '';
+
 /** @type {import('next').NextConfig} */
-const nextConfig = (() => {
-	const rawBasePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? '').trim();
-	const basePath = rawBasePath
-		? rawBasePath.startsWith('/')
-			? rawBasePath
-			: `/${rawBasePath}`
-		: '';
-
-	return {
-		output: 'export',
-		trailingSlash: true,
-		basePath,
-		assetPrefix: basePath,
-		images: { unoptimized: true },
-		reactStrictMode: true,
-	};
-})();
-
-module.exports = nextConfig;
+module.exports = {
+    output: 'export',
+    trailingSlash: true,
+    basePath,
+    assetPrefix: basePath,
+    images: { unoptimized: true },
+};
