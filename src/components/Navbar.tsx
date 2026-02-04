@@ -25,13 +25,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "glass py-4" : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass py-4" : "bg-transparent py-6"
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center text-white">
         <Link href="/" className="text-2xl font-bold tracking-tighter hover:text-blue-400 transition-colors">
-          Gwangche<span className="text-blue-500">.</span>
+          Kwangche<span className="text-blue-500">.</span>
         </Link>
 
         {/* Desktop Menu */}
