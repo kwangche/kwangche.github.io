@@ -3,60 +3,55 @@
 @tailwind utilities;
 
 :root {
-	/* HEX (주 색상 상수) */
-	--bg: #ffffff;
-	--bg-muted: #f8fafc;
-	--fg: #0f172a;
-	--fg-muted: #334155;
-	--line: #e2e8f0;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  
+  /* Primary Brand Color: Electric Blue / Purple Gradient feel */
+  --primary: #3b82f6; 
+  --primary-foreground: #ffffff;
 
-	--brand: #2563eb;
-	--brand-2: #0ea5e9;
-	--accent-blue: #2563eb;
-	--accent-green: #22c55e;
-	--accent-violet: #8b5cf6;
-	--accent-amber: #f59e0b;
-
-	/* RGBA (투명도 필요한 경우만 별도 상수로) */
-	--bg-glass-70: rgba(255, 255, 255, 0.7);
-	--bg-glass-55: rgba(255, 255, 255, 0.55);
-	--bg-glass-80: rgba(255, 255, 255, 0.8);
-	--bg-muted-40: rgba(248, 250, 252, 0.4);
-	--brand-2-25: rgba(14, 165, 233, 0.25);
-	--brand-2-18: rgba(14, 165, 233, 0.18);
-	--accent-violet-16: rgba(139, 92, 246, 0.16);
-	--accent-amber-12: rgba(245, 158, 11, 0.12);
+  /* Surface Colors for Cards/Glass */
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
-html {
-	scroll-behavior: smooth;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-	background: var(--bg);
-	color: var(--fg);
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Selection Color */
 ::selection {
-	background: var(--brand-2-25);
-}
-
-.skeleton {
-	background: linear-gradient(
-		90deg,
-		var(--bg-muted) 25%,
-		var(--line) 37%,
-		var(--bg-muted) 63%
-	);
-	background-size: 400% 100%;
-	animation: skeleton 1.4s ease-in-out infinite;
-}
-
-@keyframes skeleton {
-	0% {
-		background-position: 200% 0;
-	}
-	100% {
-		background-position: -200% 0;
-	}
+  background: var(--primary);
+  color: white;
 }
