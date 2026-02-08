@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const skills = [
   "Next.js", "React", "TypeScript", "Node.js",
   "TailwindCSS", "Prisma", "PostgreSQL", "AWS S3",
-  "OAuth 2.0", "Git", "Zustand", "React Query"
+  "OAuth 2.0", "Git", "Zustand", "TanStack Query"
 ];
 
 const experiences = [
