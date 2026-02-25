@@ -98,6 +98,20 @@ export const portfolio = {
 			],
 		},
 	] satisfies Project[],
+	personalProjects: [
+		{
+			title: 'AIKnown',
+			subtitle: 'AI 개발자 역량 분석 플랫폼',
+			description: 'GitHub 프로필 하나로 AI가 기술 스택 분석, 연봉 시뮬레이션, 인터뷰 질문까지 원스톱으로 제공',
+			frontend: ['Next.js 16', 'React 19', 'TypeScript 5', 'Tailwind CSS 4', 'Zustand 5', 'TanStack Query 5'],
+			backend: ['Express 5', 'Node.js', 'TypeScript 5', 'PostgreSQL', 'Prisma 7', 'Google Generative AI'],
+			infra: ['Docker', 'Nginx', 'AWS S3'],
+			links: [
+				{ label: 'GitHub', href: 'https://github.com/kwangche/Aiknown' },
+				{ label: 'Demo', href: 'https://aiknown.netlify.app' },
+			],
+		},
+	],
 	otherLinks: [
 		{ label: 'Legacy(퍼블리셔 작업물)', href: 'legacy/index.html' },
 		{ label: 'LEI 모바일 리뉴얼', href: 'https://www.lei.or.kr/m/index.asp' },
