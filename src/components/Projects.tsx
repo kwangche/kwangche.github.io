@@ -14,7 +14,6 @@ const personalProjects = [
       { icon: TrendingUp, label: "연봉 시뮬레이션", detail: "시장 데이터와 경력 기반 예상 연봉 범위 산출" },
       { icon: MessageSquare, label: "인터뷰 질문 생성", detail: "GitHub 프로필 기반 맞춤형 기술 면접 질문 자동 생성" },
       { icon: Lightbulb, label: "사이드 프로젝트 추천", detail: "스킬셋 기반 다음 프로젝트 아이디어 제안" },
-      { icon: Share2, label: "공개 프로필 공유", detail: "분석 결과를 링크로 공유 가능한 공개 프로필" },
     ],
     frontend: ["Next.js 16", "React 19", "TypeScript 5", "Tailwind CSS 4", "Zustand 5", "TanStack Query 5"],
     backend: ["Express 5", "Node.js", "TypeScript 5", "PostgreSQL", "Prisma 7", "Google Generative AI"],
@@ -42,6 +41,7 @@ const projects = [
       "S3 Presigned URL(PUT) 발급 → 짧은 만료 + Content-Type 검증으로 서버 부하 제거, private bucket에 object key 저장",
     ],
     frontendHighlights: [
+      "여러 패턴의 카드디자인 컴포넌트 제작 및 기사님/사용자용 프로필 UI 구현",
       "소셜 로그인 시 sessionStorage에 기대 타입 저장, GET /auth/me로 실제 타입과 비교하는 방어 로직 구현",
       "hasProfile 기반 프로필 설정 페이지 자동 유도로 가입 전환 UX 최적화",
       "Presigned URL 플로우(URL 발급 → S3 업로드 → object key 저장)를 사용자 화면에 자연스럽게 연결",
@@ -163,9 +163,31 @@ export default function Projects() {
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${project.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
               <div className="relative rounded-2xl bg-[#111111] border border-white/10 group-hover:border-violet-500/30 transition-colors m-[1px]">
 
-                {/* Header */}
-                <div className="p-8 md:p-10 pb-0 md:pb-0">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
+                {/* Top: Image + Header */}
+                <div className="flex flex-col md:flex-row">
+                  {/* Project Image (no scroll on hover) */}
+                  <div className="w-full md:w-2/5 h-64 md:h-auto min-h-[300px] relative overflow-hidden bg-gray-900 border-b md:border-b-0 md:border-r border-white/10">
+                    <Image
+                      src="/projects/pj_aiknown.png"
+                      width={600}
+                      height={400}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover object-top"
+                    />
+                    <a
+                      href={project.links.demo || "#"}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10 cursor-pointer"
+                    >
+                      <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm border border-white/20 text-white transform hover:scale-110 transition-transform">
+                        <ArrowUpRight size={32} />
+                      </div>
+                    </a>
+                  </div>
+
+                  {/* Header Content */}
+                  <div className="p-8 md:p-10 flex-1 flex flex-col justify-center">
                     <div>
                       <span className="inline-block text-xs font-bold uppercase tracking-widest text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full border border-violet-500/20 mb-3">
                         Solo Project
@@ -175,6 +197,9 @@ export default function Projects() {
                       </h3>
                       <p className="text-lg text-gray-400 mt-1">{project.subtitle}</p>
                     </div>
+                    <p className="text-gray-300 leading-relaxed max-w-3xl mt-4 mb-6">
+                      {project.description}
+                    </p>
                     <div className="flex gap-3">
                       {project.links.github && (
                         <a href={project.links.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-white/10 hover:border-white/20">
@@ -188,9 +213,6 @@ export default function Projects() {
                       )}
                     </div>
                   </div>
-                  <p className="text-gray-300 leading-relaxed max-w-3xl mt-4">
-                    {project.description}
-                  </p>
                 </div>
 
                 {/* Features Grid */}
