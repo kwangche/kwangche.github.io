@@ -6,6 +6,36 @@ import Image from "next/image";
 
 const personalProjects = [
   {
+    title: "오롯이 (orosi)",
+    subtitle: "집중 공간 실시간 혼잡도 서비스",
+    description: "서울 전역의 카페, 도서관, 공원, 코워킹 스페이스의 실시간 혼잡도를 제공하는 집중 공간 탐색 서비스입니다. 서울시 공공데이터 API와 사용자 투표를 결합해 지금 이 순간 가장 여유로운 공간을 추천합니다.",
+    features: [
+      { icon: Zap, label: "실시간 혼잡도", detail: "서울시 공공데이터 API와 사용자 피드백을 결합한 실시간 혼잡도 분석" },
+      { icon: Globe, label: "내 주변 탐색", detail: "현재 위치 기반 카카오맵 연동으로 가까운 집중 공간을 한눈에 확인" },
+      { icon: TrendingUp, label: "맞춤 추천", detail: "시간대별 패턴 분석으로 카페·도서관·공원 중 가장 여유로운 공간 추천" },
+      { icon: Users, label: "사용자 투표", detail: "IP 해시 기반 중복 방지로 실제 체감 혼잡도를 반영한 커뮤니티 데이터 수집" },
+    ],
+    frontend: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Zustand 5", "TanStack Query 5"],
+    backend: ["Next.js API Routes", "TypeScript 5", "PostgreSQL", "Prisma 6", "Seoul Open Data API", "Kakao Local API"],
+    infra: ["Vercel", "Supabase", "Vercel Cron Jobs"],
+    architecture: "FSD (Feature-Sliced Design)",
+    auth: "없음 (IP 해시 기반 비식별화)",
+    aiWorkflow: [
+      { label: "Stop Hook 세션 로그 강제화", detail: "세션 종료 시 stop.sh가 실행되어 오늘 날짜 로그 파일이 없으면 exit 1로 Claude에게 피드백을 전달 — 작업 내역 누락 원천 차단" },
+      { label: "CLAUDE.md 컨텍스트 자동 주입", detail: "FSD 구조·기술 스택·컨벤션·토큰 절약 전략을 CLAUDE.md에 문서화해 매 세션마다 재입력 없이 일관된 코딩 패턴 유지" },
+      { label: "Memory 시스템으로 장기 컨텍스트 관리", detail: ".claude/memory/sessions/에 날짜별 세션 로그를 축적해 이전 미해결 이슈·수정 파일·다음 할 일을 다음 세션에 자동 전달" },
+      { label: "커스텀 슬래시 스킬 자동화", detail: "/commit으로 Conventional Commits 형식 커밋 자동 생성, /review-pr로 PR 코드 리뷰 자동화해 반복 작업 제거" },
+      { label: "Supabase MCP 서버 연동", detail: "settings.json에 MCP 서버를 등록해 자연어로 DB 스키마 탐색·SQL 실행·마이그레이션 관리" },
+    ],
+    image: "/projects/pj_orosi.png",
+    links: {
+      github: "https://github.com/kwangche/orosi",
+      demo: "https://www.orosi.app",
+      devDemo: "https://orosi.vercel.app",
+    },
+    color: "from-teal-500 to-cyan-600",
+  },
+  {
     title: "AIKnown",
     subtitle: "AI 개발자 역량 분석 플랫폼",
     description: "GitHub 프로필 하나로 AI가 기술 스택 분석, 연봉 시뮬레이션, 인터뷰 질문까지 원스톱으로 제공하는 플랫폼입니다.",
@@ -20,6 +50,7 @@ const personalProjects = [
     infra: ["Docker", "Nginx", "AWS S3"],
     architecture: "FSD (Feature-Sliced Design)",
     auth: "GitHub",
+    image: "/projects/pj_aiknown.png",
     links: {
       github: "https://github.com/kwangche/Aiknown",
       demo: "https://aiknown.netlify.app",
@@ -157,7 +188,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="group relative rounded-2xl overflow-hidden"
+              className="group relative rounded-2xl overflow-hidden mb-10 last:mb-0"
             >
               {/* Gradient Border Effect */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${project.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
@@ -168,7 +199,7 @@ export default function Projects() {
                   {/* Project Image (no scroll on hover) */}
                   <div className="w-full md:w-2/5 h-64 md:h-auto min-h-[300px] relative overflow-hidden bg-gray-900 border-b md:border-b-0 md:border-r border-white/10">
                     <Image
-                      src="/projects/pj_aiknown.png"
+                      src={project.image}
                       width={600}
                       height={400}
                       alt={project.title}
@@ -200,7 +231,7 @@ export default function Projects() {
                     <p className="text-gray-300 leading-relaxed max-w-3xl mt-4 mb-6">
                       {project.description}
                     </p>
-                    <div className="flex gap-3">
+                    <div className="flex flex-wrap gap-3">
                       {project.links.github && (
                         <a href={project.links.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-white/10 hover:border-white/20">
                           <Github size={16} /> GitHub
@@ -209,6 +240,11 @@ export default function Projects() {
                       {project.links.demo && (
                         <a href={project.links.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium text-violet-300 hover:text-violet-200 transition-colors bg-violet-500/10 hover:bg-violet-500/20 px-4 py-2 rounded-lg border border-violet-500/20 hover:border-violet-500/40">
                           <Globe size={16} /> Live Demo
+                        </a>
+                      )}
+                      {project.links.devDemo && (
+                        <a href={project.links.devDemo} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium text-teal-300 hover:text-teal-200 transition-colors bg-teal-500/10 hover:bg-teal-500/20 px-4 py-2 rounded-lg border border-teal-500/20 hover:border-teal-500/40">
+                          <Code size={16} /> Dev Branch
                         </a>
                       )}
                     </div>
@@ -279,6 +315,28 @@ export default function Projects() {
                       <span className="text-xs font-medium px-2 py-1 rounded bg-white/5 text-gray-300">{project.auth}</span>
                     </div>
                   </div>
+
+                  {/* AI-Assisted Dev Workflow */}
+                  {project.aiWorkflow && (
+                    <div className="mt-6 pt-6 border-t border-white/5">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Sparkles size={16} className="text-violet-400" />
+                        <h4 className="text-sm font-semibold uppercase tracking-wider text-violet-400">AI-Assisted Development</h4>
+                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/20">Claude Code</span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {project.aiWorkflow.map((item, i) => (
+                          <div key={i} className="flex gap-3 p-3 rounded-lg bg-violet-500/[0.05] border border-violet-500/10 hover:border-violet-500/25 hover:bg-violet-500/[0.08] transition-all">
+                            <Sparkles size={14} className="text-violet-400 mt-0.5 flex-none" />
+                            <div>
+                              <p className="text-xs font-semibold text-violet-200 mb-0.5">{item.label}</p>
+                              <p className="text-xs text-gray-400 leading-relaxed">{item.detail}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
