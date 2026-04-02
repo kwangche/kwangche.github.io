@@ -27,7 +27,7 @@ const personalProjects = [
       { label: "커스텀 슬래시 스킬 자동화", detail: "/commit으로 Conventional Commits 형식 커밋 자동 생성, /review-pr로 PR 코드 리뷰 자동화해 반복 작업 제거" },
       { label: "Supabase MCP 서버 연동", detail: "settings.json에 MCP 서버를 등록해 자연어로 DB 스키마 탐색·SQL 실행·마이그레이션 관리" },
     ],
-    image: "/projects/pj_orosi.png",
+    image: "/projects/pj_orosi.jpg",
     links: {
       github: "https://github.com/kwangche/orosi",
       demo: "https://www.orosi.app",
